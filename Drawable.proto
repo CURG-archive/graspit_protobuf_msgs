@@ -2,7 +2,7 @@ message ShapeDrawable
 {
 
     extensions 100 to max;
-
+    optional string name = 13 [default=""];
     enum FillPattern 
     {
         DiagonalLines = 0;
@@ -46,7 +46,7 @@ message ShapeDrawable
 
 message TextDrawable 
 {
-
+  optional string name = 8 [default=""];
   required int32 id = 1;
   required string text = 2;
 
@@ -56,12 +56,12 @@ message TextDrawable
   required int32 font_size = 5;
   required string font_name = 6;
   required int32 font_color_argb = 7;
-  
+
 }
 
 message LineDrawable
 {
-
+  optional string name = 7 [default=""];
   message Point 
   {
     required float x = 1;
