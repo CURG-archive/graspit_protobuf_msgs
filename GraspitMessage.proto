@@ -1,6 +1,8 @@
 import "Drawable.proto";
+import "Renderable.proto";
 
 message GraspitProtobufMessage
 {
 optional DrawableFrame drawable_frame = 1;
+optional Renderable renderable = 2;
 }
