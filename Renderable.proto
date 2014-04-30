@@ -1,0 +1,34 @@
+  
+message Renderable
+{
+   extensions 100 to max;
+   
+   message PointXYZ
+   {
+	required float x = 1;
+	required float y = 2;
+	required float z = 3;
+   }
+
+   message ColorRGB
+   {
+	required float red = 1;
+	required float green = 2;
+	required float blue = 3;
+   }
+
+   message PointXYZRGB
+   {
+	required PointXYZ point = 1;
+	required ColorRGB color = 2;
+   }
+
+   message PointCloudXYZRGB
+   {
+	repeated PointXYZRGB points= 1;
+	optional float units = 2;
+   }
+
+   optional PointCloudXYZRGB pointCloud = 1;
+   optional string renderableFrame = 2;
+}
