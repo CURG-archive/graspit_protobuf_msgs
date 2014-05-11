@@ -29,6 +29,37 @@ message Renderable
 	optional float units = 2;
    }
 
+   message PointCloud2
+   {
+      required int32 id = 1;
+      repeated string fields = 2;
+      required bytes data = 3;
+      required uint32 height = 4;
+      required uint32 width = 5;
+
+      required bool is_bigendian = 6;
+      required bool is_dense = 7;       
+      optional float units = 8;      
+   }
+   message Quaternion
+   {
+      required float w = 1;
+      required float x = 2;
+      required float y = 3;
+      required float z = 4;
+   }
+
+   message Frame
+   {
+	required PointXYZ translation = 1;
+	required Quaternion orientation = 2;
+	required string frame_id = 3;
+	optional float units = 4;
+   }
+
+   
    optional PointCloudXYZRGB pointCloud = 1;
    optional string renderableFrame = 2;
+   optional PointCloud2 pointCloud2 = 3;
+   optional Frame frame = 4;
 }
