@@ -62,4 +62,6 @@ message Renderable
    optional string renderableFrame = 2;
    optional PointCloud2 pointCloud2 = 3;
    optional Frame frame = 4;
+
 }
+
