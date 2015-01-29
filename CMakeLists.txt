@@ -7,6 +7,7 @@ message("-- Build type: ${CMAKE_BUILD_TYPE}")
 
 find_package(Protobuf REQUIRED)
 
+file(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/gen_proto)
 set(GRASPIT_PB_OUTPUT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/gen_proto)
 file(GLOB GRASPIT_PB_PROTOS ${CMAKE_CURRENT_SOURCE_DIR}/*.proto)
 
@@ -19,7 +20,3 @@ list(APPEND GRASPIT_CORE_INCLUDE_DIRS ${GRASPIT_PB_OUTPUT_DIR})
 add_library(graspit_proto_msgs ${GRASPIT_PB_SOURCES})
 target_link_libraries(graspit_proto_msgs ${PROTOBUF_LIBRARY})
 include_directories(graspit_proto_msgs ${PROTOBUF_INCLUDE_DIR} ${GRASPIT_PB_OUTPUT_DIR})
-
-
-
-
